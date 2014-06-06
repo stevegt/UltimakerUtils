@@ -24,10 +24,10 @@ correctly, you'll see these rings' edges touching, or nearly so.
 Glass too high means you mash the glass into the nozzle and get little
 or no plastic, glass too low means you get dribbles.
 
-You'll quickly get good at twiddling the bed height thumbscrews screws
-while it's slowly circling; your goal is to make the rings nice and
-even all the way around; see the example photos in this repository or
-in the discussion thread.
+You'll quickly get good at twiddling the bed height thumbscrews while
+it's slowly circling; your goal is to make the rings nice and even all
+the way around; see the example photos in this repository or in the
+discussion thread.
 
 
 Steve Traugott
