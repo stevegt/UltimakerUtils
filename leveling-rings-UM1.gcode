@@ -9,7 +9,6 @@ G28 Z0                          ;move Z to min endstops
 G1 Z15.0 F9000                  ;move the platform down 15mm
 M140 S60.00                   ;set bed temp (no wait)
 M109 T0 S230.00             ;set extruder temp (wait)
-M190 S60.00                ;set bed temp (wait)
 G92 E0                          ;zero the extruded length
 G1 F200 E3                      ;extrude 3mm of feed stock
 G92 E0                          ;zero the extruded length again
@@ -44,7 +43,6 @@ G2 F1000  X16.10  Y102.50 I86.40 E49.42
 
 ;End GCode
 M104 S0                         ;extruder heater off
-M140 S0                         ;heated bed heater off (if you have it)
 G91                             ;relative positioning
 G1 E-1 F300                     ;retract the filament a bit before lifting the nozzle, to release some of the pressure
 G1 Z+0.5 E-5 X-20 Y-20 F9000    ;move Z up a bit and retract filament even more
