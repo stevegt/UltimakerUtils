@@ -65,6 +65,7 @@ for line in sys.stdin:
 		m = re.match('^(G0.+)Z\S+$', line)
 		if m:
 			print "; part=%d, state=%s" % (part, state)
+			print "G0 Z%f" % z_height
 			print "%s" % (m.group(1))
 			state = 'pass'
 	elif state == 'pass':
