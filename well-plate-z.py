@@ -27,6 +27,9 @@ power switch.
 Each new object start looks like this:
 
 	...
+	G92 E0
+	G10
+	G0 F9000 ... Z11.50
 	G0 X110.50 Y139.00
 	;Layer count: 39
 	;LAYER:0
@@ -36,6 +39,9 @@ Each new object start looks like this:
 We want it to look like this:
 
 	...
+	G92 E0
+	G10
+	G0 F9000 ... Z11.50
 	G0 Z{z_height}
 	G0 X110.50 Y139.00
 	;Layer count: 39
