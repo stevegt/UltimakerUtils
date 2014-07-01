@@ -69,9 +69,13 @@ for line in sys.stdin:
 			state = 'pass'
 			print "; part=%d, state=%s" % (part, state)
 	elif state == 'pass':
-		if line == "G10":
+		if line == "G92 E0":
 			part += 1
 			state = 'before_layer'
+			print "; part=%d, state=%s" % (part, state)
+		elif line.startswith("M25"):
+			print "G0 Z%f" % z_height
+			state = 'end'
 			print "; part=%d, state=%s" % (part, state)
 	elif state == 'before_layer':
 		# G0 X74.90 Y105.38
@@ -79,10 +83,6 @@ for line in sys.stdin:
 		if m:
 			print "G0 Z%f" % z_height
 			state = 'init'
-			print "; part=%d, state=%s" % (part, state)
-		elif line.startswith("M25"):
-			print "G0 Z%f" % z_height
-			state = 'end'
 			print "; part=%d, state=%s" % (part, state)
 	print line
 
