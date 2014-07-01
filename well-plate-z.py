@@ -64,21 +64,25 @@ for line in sys.stdin:
 		# G0 X106.67 Y135.05 Z0.20
 		m = re.match('^(G0.+)Z\S+$', line)
 		if m:
-			print "; part=%d, state=%s" % (part, state)
 			print "G0 Z%f" % z_height
 			print "%s" % (m.group(1))
 			state = 'pass'
-	elif state == 'pass':
-		if line == "G92 E0":
-			part += 1
 			print "; part=%d, state=%s" % (part, state)
+	elif state == 'pass':
+		if line == "G10":
+			part += 1
 			state = 'before_layer'
+			print "; part=%d, state=%s" % (part, state)
 	elif state == 'before_layer':
 		# G0 X74.90 Y105.38
 		m = re.match('^(G0\s*X\S+\s*Y\S+)$', line)
 		if m:
-			print "; part=%d, state=%s" % (part, state)
 			print "G0 Z%f" % z_height
 			state = 'init'
+			print "; part=%d, state=%s" % (part, state)
+		elif line.startswith("M25"):
+			print "G0 Z%f" % z_height
+			state = 'end'
+			print "; part=%d, state=%s" % (part, state)
 	print line
 
