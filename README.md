@@ -8,7 +8,7 @@ affiliated with Ultimaker, other than as a happy customer.)
 Leveling Rings
 --------------
 
-Discussion, tips, and background at: http://umforum.ultimaker.com/index.php?/topic/5951-um2-calibration-utility-leveling-ringsgcode/
+Discussion, tips, and background at: https://community.ultimaker.com/topic/5447-calibration-utility-leveling-ringsgcode/
 
 This little snippet of g-code helps greatly when checking bed
 leveling, and gives you a chance to twist the thumbscrews in real time
